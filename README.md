@@ -25,6 +25,9 @@ py -3.12 -m venv .venv
 | [GHZ verification](challenges/ghz_verification/README.md) | Prepare a GHZ state and construct its stabilizer parity checks. | `.\.venv\Scripts\python.exe challenges\ghz_verification\solution.py 3` |
 | [Four-qubit QFT](challenges/qft_four_qubits/README.md) | Build the four-qubit quantum Fourier transform from elementary gates. | `.\.venv\Scripts\python.exe challenges\qft_four_qubits\submission.py` |
 | [Fermionic VQE](challenges/fermionic_vqe/README.md) | Map a fermionic Hamiltonian to qubits and variationally find its ground energy. | `.\.venv\Scripts\python.exe challenges\fermionic_vqe\submission.py` |
+| [QPE spectrum reader](challenges/qpe_spectrum/README.md) | Read all eigenphases in a superposition and price the faintest spectral peak. | `.\.venv\Scripts\python.exe challenges\qpe_spectrum\submission.py` |
+| [Hidden-subgroup symmetry score](challenges/hsp_symmetry_score/README.md) | Score how well labeled binary data respects a candidate XOR symmetry. | `.\.venv\Scripts\python.exe challenges\hsp_symmetry_score\submission.py` |
+| [QSVT diffusion solver](challenges/qsvt_diffusion/README.md) | Approximate one backward-Euler diffusion-reaction step with QSVT matrix inversion. | `.\.venv\Scripts\python.exe challenges\qsvt_diffusion\submission.py` |
 
 ## Adding another challenge
 
