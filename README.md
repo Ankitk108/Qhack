@@ -28,6 +28,7 @@ py -3.12 -m venv .venv
 | [QPE spectrum reader](challenges/qpe_spectrum/README.md) | Read all eigenphases in a superposition and price the faintest spectral peak. | `.\.venv\Scripts\python.exe challenges\qpe_spectrum\submission.py` |
 | [Hidden-subgroup symmetry score](challenges/hsp_symmetry_score/README.md) | Score how well labeled binary data respects a candidate XOR symmetry. | `.\.venv\Scripts\python.exe challenges\hsp_symmetry_score\submission.py` |
 | [QSVT diffusion solver](challenges/qsvt_diffusion/README.md) | Approximate one backward-Euler diffusion-reaction step with QSVT matrix inversion. | `.\.venv\Scripts\python.exe challenges\qsvt_diffusion\submission.py` |
+| [Grover's little helper](challenges/grovers_little_helper/README.md) | Use one ancilla to solve the half-marked two-qubit Grover case exactly. | `.\.venv\Scripts\python.exe challenges\grovers_little_helper\submission.py` |
 
 ## Adding another challenge
 
