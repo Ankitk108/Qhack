@@ -1,2 +1,4 @@
 pennylane==0.36.0
+# PennyLane 0.36 imports autoray.autoray.NumpyMimic, removed in newer releases.
+autoray==0.6.12
 
