@@ -35,3 +35,9 @@ Expected output:
 The public examples use `n=3` and `n=5`; both produce `1.0` within floating
 point tolerance.
 
+## Submission
+
+Use `submission.py` for the challenge platform. It preserves the supplied
+wrapper, solution function, audit code, and public-test order. The only filled
+section is `prepare_and_build_checks`, as required by the challenge template.
+
