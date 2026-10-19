@@ -57,7 +57,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("n", type=int, help="number of qubits (at least 2)")
     args = parser.parse_args()
-    print(wrapper(args.n))
+    # Keep wrapper's raw value for numerical tests, but suppress insignificant
+    # floating-point noise in the human-facing command-line output.
+    print(round(wrapper(args.n), 12))
 
 
 if __name__ == "__main__":
