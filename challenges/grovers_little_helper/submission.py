@@ -2,10 +2,9 @@ import json
 import pennylane as qp
 import pennylane.numpy as np
 
-dev = qp.device("default.qubit", wires=3)
+dev = qp.device("default.qubit", wires=3, shots=1)
 
 
-@qp.set_shots(1)
 @qp.qnode(dev)
 def circuit(generator, oracle, diffuser):
     """Implement Grover search with one auxiliary qubit."""

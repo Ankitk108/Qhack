@@ -3,10 +3,9 @@
 import pennylane as qp
 
 
-dev = qp.device("default.qubit", wires=3)
+dev = qp.device("default.qubit", wires=3, shots=1)
 
 
-@qp.set_shots(1)
 @qp.qnode(dev)
 def circuit(generator, oracle, diffuser):
     """Return one marked two-qubit state using one oracle and one diffuser."""
