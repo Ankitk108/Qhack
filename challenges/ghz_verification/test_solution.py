@@ -3,7 +3,7 @@
 import pennylane as qml
 import pytest
 
-from solution import prepare_and_build_checks, wrapper
+from .solution import prepare_and_build_checks, wrapper
 
 
 @pytest.mark.parametrize("n", [2, 3, 5, 8])

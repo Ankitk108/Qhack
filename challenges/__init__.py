@@ -1,0 +1,2 @@
+"""Independent QHack challenge solutions."""
+
