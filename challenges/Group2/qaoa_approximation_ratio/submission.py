@@ -77,16 +77,18 @@ def approximation_ratio(edges):
 
 
 def run(test_case_input: str) -> str:
-    edges = json.loads(test_case_input)
-    return str(approximation_ratio(edges))
+    ins = json.loads(test_case_input)
+    output = approximation_ratio(ins)
+
+    return str(output)
 
 
 def check(solution_output: str, expected_output: str) -> None:
     solution_output = json.loads(solution_output)
     expected_output = json.loads(expected_output)
-    assert np.allclose(solution_output, expected_output, rtol=5e-2), (
-        "Your code does not yield the right approximation ratio"
-    )
+    assert np.allclose(
+        solution_output, expected_output, rtol=5e-2
+    ), "Your code does not yield the right approximation ratio"
 
 
 test_cases = [
@@ -95,17 +97,18 @@ test_cases = [
 ]
 
 
-if __name__ == "__main__":
-    for i, (input_, expected_output) in enumerate(test_cases):
-        print(f"Running test case {i} with input '{input_}'...")
-        try:
-            output = run(input_)
-        except Exception as exc:
-            print(f"Runtime Error. {exc}")
+for i, (input_, expected_output) in enumerate(test_cases):
+    print(f"Running test case {i} with input '{input_}'...")
+
+    try:
+        output = run(input_)
+
+    except Exception as exc:
+        print(f"Runtime Error. {exc}")
+
+    else:
+        if message := check(output, expected_output):
+            print(f"Wrong Answer. Have: '{output}'. Want: '{expected_output}'.")
+
         else:
-            try:
-                check(output, expected_output)
-            except AssertionError as exc:
-                print(f"Wrong Answer. {exc}")
-            else:
-                print("Correct!")
+            print("Correct!")

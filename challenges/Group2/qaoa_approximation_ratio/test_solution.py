@@ -1,22 +1,18 @@
+import pennylane.numpy as np
 import pytest
 
 from challenges.Group2.qaoa_approximation_ratio.solution import approximation_ratio
-from challenges.Group2.qaoa_approximation_ratio.submission import (
-    approximation_ratio as submission_ratio,
-    check,
+
+
+@pytest.mark.parametrize(
+    ("edges", "expected"),
+    [
+        ([[0, 1], [1, 2], [0, 2], [2, 3]], 0.58160924),
+        ([[0, 1], [1, 2], [2, 3], [3, 0]], 0.94746734),
+    ],
 )
-
-
-def test_honest_solution_returns_a_scalar():
-    result = approximation_ratio([[0, 1], [1, 2], [2, 0]])
-    assert result.ndim == 0
-
-
-@pytest.mark.parametrize("expected", ["0.58160924", "0.94746734"])
-def test_submission_matches_supplied_checker(expected):
-    result = submission_ratio([[0, 1]])
-    assert result.shape == (0,)
-    check(str(result), expected)
+def test_public_cases(edges, expected):
+    assert np.allclose(approximation_ratio(edges), expected, rtol=5e-2)
 
 
 def test_empty_graph_is_rejected():
