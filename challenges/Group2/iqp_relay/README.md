@@ -24,9 +24,12 @@ The built-in `IQP` template is never used.
 
 ## Optimization
 
-The number of trainable parameters is `len(pattern)`. Adam begins from a fixed
-nonzero vector, avoiding the stationary point that can occur when every
-rotation begins at zero, and minimizes the QNode expectation value directly.
+The number of trainable parameters is `len(pattern)`. When the net Pauli-X
+product of a parameter group anticommutes with the measured Pauli-Z word,
+setting that shared parameter to $\pi$ and all others to zero prepares an exact
+`-1` eigenstate. The optimizer detects and uses this deterministic global
+minimum. If no individual group provides that construction, it falls back to
+Adam from several nonzero starting points rather than trusting one local run.
 
 ## Human-run validation
 

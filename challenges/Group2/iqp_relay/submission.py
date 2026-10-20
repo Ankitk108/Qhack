@@ -32,16 +32,34 @@ def iqp_circuit(weights, pattern, observable):
 
 def optimize_iqp(pattern, observable):
     """Return parameters minimizing the IQP cost."""
-    weights = np.full(len(pattern), 0.3, requires_grad=True)
-    optimizer = qp.AdamOptimizer(stepsize=0.1)
+    if not any(observable):
+        return np.zeros(len(pattern), requires_grad=True)
 
-    for _ in range(120):
-        weights = optimizer.step(
-            lambda current: iqp_circuit(current, pattern, observable),
-            weights,
+    for parameter_index, rotation_group in enumerate(pattern):
+        anticommuting_factors = sum(
+            observable[wire] for wires in rotation_group for wire in wires
         )
+        if anticommuting_factors % 2 == 1:
+            exact_weights = [0.0] * len(pattern)
+            exact_weights[parameter_index] = np.pi
+            return np.array(exact_weights, requires_grad=True)
 
-    return weights
+    best_weights = None
+    best_cost = float("inf")
+    for initial_value in (0.3, 0.7, 1.1):
+        weights = np.full(len(pattern), initial_value, requires_grad=True)
+        optimizer = qp.AdamOptimizer(stepsize=0.1)
+        for _ in range(200):
+            weights = optimizer.step(
+                lambda current: iqp_circuit(current, pattern, observable),
+                weights,
+            )
+        cost = float(iqp_circuit(weights, pattern, observable))
+        if cost < best_cost:
+            best_cost = cost
+            best_weights = weights
+
+    return best_weights
 
 
 # These functions are responsible for testing the solution.
