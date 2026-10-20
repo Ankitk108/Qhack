@@ -20,6 +20,8 @@ py -3.12 -m venv .venv
 
 ## Challenges
 
+### Group 1
+
 | Challenge | Description | Run |
 | --- | --- | --- |
 | [GHZ verification](challenges/Group1/ghz_verification/README.md) | Prepare a GHZ state and construct its stabilizer parity checks. | `.\.venv\Scripts\python.exe challenges\Group1\ghz_verification\solution.py 3` |
@@ -30,10 +32,16 @@ py -3.12 -m venv .venv
 | [QSVT diffusion solver](challenges/Group1/qsvt_diffusion/README.md) | Approximate one backward-Euler diffusion-reaction step with QSVT matrix inversion. | `.\.venv\Scripts\python.exe challenges\Group1\qsvt_diffusion\submission.py` |
 | [Grover's little helper](challenges/Group1/grovers_little_helper/README.md) | Use one ancilla to solve the half-marked two-qubit Grover case exactly. | `.\.venv\Scripts\python.exe challenges\Group1\grovers_little_helper\submission.py` |
 
+### Group 2
+
+| Challenge | Description | Run |
+| --- | --- | --- |
+| [Building a quantum kernel](challenges/Group2/quantum_kernel/README.md) | Evaluate state-overlap kernels and assemble pairwise kernel matrices. | `.\.venv\Scripts\python.exe challenges\Group2\quantum_kernel\submission.py` |
+
 ## Adding another challenge
 
-Create `challenges/<descriptive_name>/` containing a `solution.py`, a README,
-and `test_solution.py`. Shared dependencies belong in the root requirement
-files. Add a challenge-local requirements file only when the challenge needs
-dependencies that are not shared by the rest of the repository.
+Create `challenges/<group>/<descriptive_name>/` containing a `solution.py`, a
+README, and `test_solution.py`. Shared dependencies belong in the root
+requirement files. Add a challenge-local requirements file only when the
+challenge needs dependencies that are not shared by the rest of the repository.
 
