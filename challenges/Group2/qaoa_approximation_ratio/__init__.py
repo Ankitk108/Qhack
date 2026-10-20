@@ -1,0 +1,1 @@
+"""QAOA approximation-ratio challenge."""
