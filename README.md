@@ -37,6 +37,7 @@ py -3.12 -m venv .venv
 | Challenge | Description | Run |
 | --- | --- | --- |
 | [Building a quantum kernel](challenges/Group2/quantum_kernel/README.md) | Evaluate state-overlap kernels and assemble pairwise kernel matrices. | `.\.venv\Scripts\python.exe challenges\Group2\quantum_kernel\submission.py` |
+| [Keep your own score](challenges/Group2/pauli_from_probabilities/README.md) | Reconstruct Pauli-word expectations from computational-basis probabilities. | `.\.venv\Scripts\python.exe challenges\Group2\pauli_from_probabilities\submission.py` |
 
 ## Adding another challenge
 
