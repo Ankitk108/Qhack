@@ -42,6 +42,7 @@ py -3.12 -m venv .venv
 | [The scouting report](challenges/Group2/scouting_report/README.md) | Reconstruct one wire's Bloch vector and purity using expectation values only. | `.\.venv\Scripts\python.exe challenges\Group2\scouting_report\submission.py` |
 | [A relay of phases](challenges/Group2/iqp_relay/README.md) | Build an IQP circuit from commuting Pauli-X rotations and optimize its parameters. | `.\.venv\Scripts\python.exe challenges\Group2\iqp_relay\submission.py` |
 | [Approximation ratio for QAOA](challenges/Group2/qaoa_approximation_ratio/README.md) | Compare depth-four QAOA against the exact minimum-vertex-cover ground energy. | `.\.venv\Scripts\python.exe challenges\Group2\qaoa_approximation_ratio\submission.py` |
+| [A basket of options](challenges/Group2/basket_options/README.md) | Estimate a correlated two-asset basket option with quantum Monte Carlo. | `.\.venv\Scripts\python.exe challenges\Group2\basket_options\submission.py` |
 
 ## Adding another challenge
 
