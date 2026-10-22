@@ -1,2 +1,0 @@
-"""GHZ verification challenge."""
-

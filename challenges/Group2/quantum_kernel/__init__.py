@@ -1,2 +1,0 @@
-"""Quantum-kernel construction challenge."""
-

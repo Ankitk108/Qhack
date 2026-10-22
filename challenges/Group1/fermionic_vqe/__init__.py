@@ -1,2 +1,0 @@
-"""Fermionic Hamiltonian VQE challenge."""
-

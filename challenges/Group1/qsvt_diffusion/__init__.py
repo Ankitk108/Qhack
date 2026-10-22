@@ -1,2 +1,0 @@
-"""QSVT diffusion-reaction challenge."""
-
